@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insight Mahasiswa | Dashboard Survei</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">STUDI KASUS HCI & DATA VISUALIZATION</p>
+      <h1>Insight Mahasiswa</h1>
+      <p class="subtitle">Dashboard ringkas hasil survei kebiasaan belajar mahasiswa</p>
+    </div>
+    <span class="status">Data contoh untuk demonstrasi</span>
+  </header>
+
+  <main class="container">
+    <section class="intro panel">
+      <div>
+        <h2>Ringkasan survei</h2>
+        <p>Gunakan dashboard ini untuk memahami kebiasaan belajar responden melalui ringkasan angka dan grafik yang mudah dibaca.</p>
+      </div>
+      <label class="filter-label" for="topicFilter">Tampilkan berdasarkan fokus
+        <select id="topicFilter">
+          <option value="all">Semua responden</option>
+          <option value="online">Sering belajar online</option>
+          <option value="offline">Lebih sering belajar offline</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="stats-grid" aria-label="Ringkasan statistik">
+      <article class="stat-card">
+        <p class="stat-label">Jumlah responden</p>
+        <p class="stat-number" id="respondentCount">30</p>
+        <p class="stat-note">Data survei contoh</p>
+      </article>
+      <article class="stat-card">
+        <p class="stat-label">Rata-rata belajar</p>
+        <p class="stat-number"><span id="avgHours">2.8</span><small> jam/hari</small></p>
+        <p class="stat-note">Durasi belajar per hari</p>
+      </article>
+      <article class="stat-card">
+        <p class="stat-label">Metode favorit</p>
+        <p class="stat-number stat-word" id="favoriteMethod">Video</p>
+        <p class="stat-note">Metode yang paling banyak dipilih</p>
+      </article>
+  </section>
+
+    <section class="charts-grid">
+      <article class="panel chart-panel">
+        <div class="panel-heading">
+          <div><h2>Metode belajar favorit</h2><p>Perbandingan jumlah pilihan responden</p></div>
+        </div>
+        <div class="chart-wrap"><canvas id="methodChart" aria-label="Grafik batang metode belajar favorit"></canvas></div>
+      </article>
+      <article class="panel chart-panel">
+        <div class="panel-heading">
+          <div><h2>Lokasi belajar</h2><p>Proporsi lokasi yang paling sering digunakan</p></div>
+        </div>
+        <div class="chart-wrap"><canvas id="locationChart" aria-label="Grafik lingkaran lokasi belajar"></canvas></div>
+      </article>
+      <article class="panel chart-panel chart-wide">
+        <div class="panel-heading">
+          <div><h2>Durasi belajar harian</h2><p>Jumlah responden pada setiap kelompok durasi</p></div>
+        </div>
+        <div class="chart-wrap chart-wrap-wide"><canvas id="durationChart" aria-label="Grafik durasi belajar harian"></canvas></div>
+      </article>
+    </section>
+
+    <section class="panel insight-panel">
+      <div class="insight-icon" aria-hidden="true">i</div>
+      <div>
+        <h2>Insight singkat</h2>
+        <p id="insightText">Metode belajar video menjadi pilihan terbanyak pada data contoh. Perhatikan bahwa hasil ini hanya ilustrasi, bukan hasil survei mahasiswa sungguhan.</p>
+      </div>
+    </section>
+
+    <section class="panel notes-panel">
+      <h2>Catatan penggunaan</h2>
+      <ul>
+        <li>Gunakan filter untuk melihat ringkasan responden berdasarkan fokus belajar.</li>
+        <li>Grafik batang digunakan untuk membandingkan kategori, sedangkan grafik lingkaran menunjukkan proporsi.</li>
+        <li>Angka pada halaman ini adalah data simulasi. Ganti dengan data survei asli jika tersedia.</li>
+      </ul>
+    </section>
+  </main>
+  <footer><p>Proyek pembelajaran • HCI dan Visualisasi Data • HTML, CSS, JavaScript, Chart.js</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
